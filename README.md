@@ -1,6 +1,6 @@
-# Non-Scratch Org Development Starter Kit
+# Salesforce Sandbox Org Development Starter Kit
 
-This starter kit is to help develper quickly to start to work with any sandbox environment without run sfdx create dx project. It abstract out
+This starter kit is to help develper quickly to start to work with any sandbox environment without run sfdx create dx project.
 
 Please ensure to add all the objects into the manifest file package.xml
 
