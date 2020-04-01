@@ -1,0 +1,15 @@
+#!/bin/zsh
+# run unit test
+# Author: david.zhao@resentek.com
+# Date: 2020-04-01
+
+if test "$1" != ""; then
+  echo -- run test:$1 $2--
+  if test "$2" != ""; then
+    sfdx force:apex:test:run -n $1 -r human -u $2
+  else
+    sfdx force:apex:test:run -n $1 -r human -u dev
+  fi
+else
+  echo The command syntax: qa classNameWithCommaSeparated {yourAlias}
+fi

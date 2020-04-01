@@ -1,0 +1,12 @@
+#!/bin/zsh
+# deploy sources to An dev org
+# Author: @david.zhao
+# Date: 11/20/2019
+
+if test "$1" = ""; then
+  echo -- COMMAND syntax: test filename --
+else
+  echo -- begin test files: $1 alias:$2--
+  sfdx force:apex:test:run -n $1 -r human -u $2 
+  echo -- end of test --
+fi

@@ -1,0 +1,6 @@
+#!/bin/zsh
+# List all aliases registsered locally
+# Author: david.zhao@resentek.com
+# Date: 04/01/2020
+echo -- list locally registered aliases --
+sfdx force:alias:list

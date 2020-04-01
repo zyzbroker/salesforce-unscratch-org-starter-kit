@@ -1,0 +1,24 @@
+#!/bin/zsh
+# deploy sources to An dev org
+# Author: @david.zhao
+# Date: 2020-04-01
+
+if test "$1" = "class"; then
+  echo -- deploying $1 $2 to org $3--
+  sfdx force:source:deploy -m "ApexClass:$2" -u $3
+  echo -- endofdeployment --
+elif test "$1" = "object"; then
+  echo -- deploying $1 $2 to org $3--
+  sfdx force:source:deploy -m "CustomObject:$2" -u $3
+  echo -- endofdeployment --
+elif test "$1" = "aura"; then
+  echo -- deploying $1 $2 to org $3--
+  sfdx force:source:deploy -m "AuraDefinitionBundle:$2" -u $3
+  echo -- endofdeployment --
+elif test "$1" = "workflow"; then
+  echo -- deploying $1 $2 to org $3--
+  sfdx force:source:deploy -m "Workflow:$2" -u $3
+  echo -- endofdeployment --
+else
+  echo "-- command syntax: put classes|objects|aura Datasourc__c|DatasourceWrapper --"
+fi

@@ -1,0 +1,29 @@
+#!/bin/zsh
+# Create A new resource
+# Author: david.zhao@resentek.com
+# Date: 2020-04-01
+
+if test "$1" = "aura"; then
+
+  echo --Create lightning aura component--
+  sfdx force:lightning:component:create -n $2 -d force-app/main/default/aura
+  echo EndOfCreate
+
+elif test "$1" = "lwc"; then
+
+  echo Create lightning web component
+  sfdx force:lightning:component:create -n $2 --type lwc -d force-app/main/default/lwc
+  echo EndOfCreate
+
+elif test "$1" = "class"; then
+
+  echo Create Apex class
+  sfdx force:apex:class:create -n $2 -t DefaultApexClass -d force-app/main/default/classes
+  echo EndOfCreate
+
+else
+
+  echo The correct command syntax: new type name
+  echo type: aura, lwc, class
+fi
+

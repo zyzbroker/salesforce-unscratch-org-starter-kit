@@ -1,0 +1,11 @@
+#!/bin/zsh
+# deploy sources to An dev org
+# Author: @david.zhao
+# Date: 11/1/2019
+
+if test "$1" != ""; then
+  echo --retrieving---
+  sfdx force:source:retrieve -x manifest/package.xml -u $1
+else
+  echo "Command syntax: retrieve authAlias (dev)"
+fi

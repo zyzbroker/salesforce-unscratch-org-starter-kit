@@ -1,0 +1,6 @@
+#!/bin/zsh
+# Create local development org alias
+# Author: David.zhao@resentek.com
+# Date: 04/01/2020
+
+sfdx force:auth:web:login -r https://test.salesforce.com -a $1

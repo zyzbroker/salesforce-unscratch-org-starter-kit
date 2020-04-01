@@ -1,0 +1,1 @@
+sfdx force:alias:list

@@ -1,0 +1,7 @@
+echo "--- step1: checkin source codes---"
+git add *
+echo "--- step2: commit comment ---"
+git commit -am "$1"
+echo "--- step3: push to SVP --"
+git push
+echo "--- end of checkin ---"

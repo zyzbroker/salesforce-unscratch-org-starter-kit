@@ -1,0 +1,26 @@
+#!/bin/zsh
+# deploy sources to An dev org
+# Author: david.zhao@resentek.com
+# Date: 2020-04-01
+
+if test "$1" = "all"; then
+
+echo "---step1: deploying CLASSES to org $2---"
+sfdx force:source:deploy -u $2 -p "force-app/main/default/classes"
+echo "--- end of deployment---"
+
+echo "---step2: deploying LWC to org $2---"
+sfdx force:source:deploy -u $2 -p "force-app/main/default/lwc"
+echo "--- end of deployment---"
+
+echo "---step3: deploying AURA to org $2---"
+sfdx force:source:deploy -u $2 -p "force-app/main/default/aura"
+echo "--- end of deployment---"
+
+else
+
+echo "---deploying $1 to org $2---"
+sfdx force:source:deploy -u $2 -p "force-app/main/default/$1"
+echo "--- end of deployment---"
+
+fi

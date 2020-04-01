@@ -1,0 +1,1 @@
+sfdx force:auth:web:login -r https://test.salesforce.com -a %1
